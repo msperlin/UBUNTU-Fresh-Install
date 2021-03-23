@@ -20,6 +20,7 @@ sudo apt upgrade -y
 # install external software using bash
 ./bash-to-install/install_R.sh
 ./bash-to-install/install_Rstudio.sh
+./bash-to-install/configure_Rstudio.sh
 ./bash-to-install/install_Google-Chrome.sh
 
 ## make sure to update and clean
@@ -51,19 +52,11 @@ do
 	sudo snap install "$snap_software" --classic
 done
 
-
 ## Make sure to update and clean
 sudo apt update
 sudo apt upgrade -y
-
 sudo apt autoclean
 sudo apt autoremove -y
-
-# set rstudio config
-rstudio_config="Rstudio-Config/my-rstudio-prefs.json"
-target_config="/home/$USER/.config/rstudio/rstudio-prefs.json"
-
-cp -f "$rstudio_config" "$target_config" 
 
 # install required R packages
 for pkg in $(cat R-pkgs/pkgs_to_install.txt )
