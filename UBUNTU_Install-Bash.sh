@@ -17,23 +17,18 @@ done
 sudo apt update 
 sudo apt upgrade -y
 
-# install external software using bash
-./bash-to-install/install_R.sh
-./bash-to-install/install_Rstudio.sh
-./bash-to-install/configure_Rstudio.sh
-./bash-to-install/install_Google-Chrome.sh
-
-## make sure to update and clean
-sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y
-
-sudo apt autoclean
-sudo apt autoremove -y
-
 # install by apt
 for apt_software in $(cat apt-to-install/list_to_install.txt)
 do
 	sudo apt install "$apt_software" -y
 done
+
+
+# install external software using bash
+./bash-to-install/install_R.sh
+./bash-to-install/install_Rstudio.sh
+./bash-to-install/configure_Rstudio.sh
+./bash-to-install/install_Google-Chrome.sh
 
 # remove snap lock from linux mint
 # see this post https://winaero.com/enable-or-disable-snap-in-linux-mint-20/
