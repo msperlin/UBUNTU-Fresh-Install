@@ -30,8 +30,4 @@ jobs:
           chmod +x UBUNTU_Install-Bash.sh
           ./UBUNTU_Install-Bash.sh
 
-      - name: install R packages
-        run: | 
-          pkgs="c('tidyverse', )"  
-          Rscript -e 'install.packages("tidyverse", repos="https://cloud.r-project.org")'
-
+      
