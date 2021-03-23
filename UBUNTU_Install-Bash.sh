@@ -9,7 +9,7 @@ PPA_OBSTUDIO="ppa:obsproject/obs-studio"
 ## Find rstudio latest ver download
 wget -qO- https://rstudio.com/products/rstudio/download/ | grep -Eoi '<a [^>]+>' |  grep -Eo 'href="[^\"]+"' |  grep -Eo '(http|https)://download1.rstudio.org/desktop/bionic/amd64/rstudio-[^/"]+-amd64.deb' > /tmp/link_dl.txt
 
-URL_RSTUDIO=$(head -n 1 /temp/link_dl.txt)
+URL_RSTUDIO=$(head -n 1 /tmp/link_dl.txt)
 URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 URL_CODE="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 
