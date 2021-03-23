@@ -88,8 +88,8 @@ sudo apt autoremove -y
 #Rscript -e 'install.packages("tidyverse", repos="https://cloud.r-project.org")'
 
 # set rstudio config
-rstudio_config="R-Scripts/my-rstudio-prefs.json"
-target_config="/home/msperlin/.config/rstudio/rstudio-prefs.json"
+rstudio_config="Rstudio-Config/my-rstudio-prefs.json"
+target_config="/home/$USER/.config/rstudio/rstudio-prefs.json"
 
 cp -f "$rstudio_config" "$target_config" 
 
