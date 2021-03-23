@@ -8,6 +8,7 @@ This bash script includes the following software:
 ## Main software
 
 - R ([latest](https://www.r-project.org/))
+  - All packages installed
 - RStudio ([latest](https://rstudio.com/))
 - Google Chrome ([latest](https://www.google.com/chrome/))
 - Microsoft code ([latest by snap](https://snapcraft.io/code))
@@ -31,7 +32,6 @@ This bash script includes the following software:
 2) Unpack and, within a terminal, execute the main script:
 
 ```
-chmod +x UBUNTU_Install-Bash.sh
 ./UBUNTU_Install-Bash.sh
 ```
 

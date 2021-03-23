@@ -93,5 +93,18 @@ target_config="/home/msperlin/.config/rstudio/rstudio-prefs.json"
 
 cp -f "$rstudio_config" "$target_config" 
 
+# install required packages
+pkgs=$(cat R-pkgs/pkgs_to_install.txt )
+
+for pkg in $(cat R-pkgs/pkgs_to_install.txt )
+do
+  echo $pkg
+done
+
+for pkg in $(cat R-pkgs/pkgs_to_install.txt )
+do
+	Rscript -e "install.packages(\"$pkg\", repos='https://cloud.r-project.org')"
+done
+
 echo ""
 echo "DONE! All softwares are installed"
