@@ -84,5 +84,14 @@ sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y
 sudo apt autoclean
 sudo apt autoremove -y
 
+# install r pkgs (optional)
+#Rscript -e 'install.packages("tidyverse", repos="https://cloud.r-project.org")'
+
+# set rstudio config
+rstudio_config="R-Scripts/my-rstudio-prefs.json"
+target_config="/home/msperlin/.config/rstudio/rstudio-prefs.json"
+
+cp -f "$rstudio_config" "$target_config" 
+
 echo ""
 echo "DONE! All softwares are installed"
