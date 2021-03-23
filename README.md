@@ -7,10 +7,13 @@ This bash script was written for Linux Mint (Ubuntu) and will install all needed
 - RStudio (latest)
 - Google Chrome (latest)
 - Microsoft code (latest by snap)
+- libreoffice
+- textudio and texlive
+- obstudio
+
 
 ## Others
 - virtualbox
-- libreoffice
 - keepass2
 - git
 - okular
