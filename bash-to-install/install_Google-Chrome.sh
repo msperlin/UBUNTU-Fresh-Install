@@ -2,7 +2,6 @@
 
 URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 
-
 DIR_DL="/tmp/chrome-temp"
 
 ## Download and install external software
