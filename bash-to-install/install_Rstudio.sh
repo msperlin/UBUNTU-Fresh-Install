@@ -3,7 +3,7 @@
 echo "  - Installing RStudio"
 
 ## Find rstudio latest ver download
-wget -qO- https://rstudio.com/products/rstudio/download/ | grep -Eoi '<a [^>]+>' |  grep -Eo 'href="[^\"]+"' |  grep -Eo '(http|https)://download1.rstudio.org/desktop/bionic/amd64/rstudio-[^/"]+-amd64.deb' > /tmp/link_dl.txt
+wget -qO- https://rstudio.com/products/rstudio/download/ | grep -Eoi '<a [^>]+>' |  grep -Eo 'href="[^\"]+"' |  grep -Eo '(http|https)://download1.rstudio.org/desktop/bionic/amd64/rstudio-[^/"]+-amd64.deb' >| /tmp/link_dl.txt
 
 URL_RSTUDIO=$(head -n 1 /tmp/link_dl.txt)
 
