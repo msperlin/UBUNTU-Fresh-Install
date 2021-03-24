@@ -7,14 +7,22 @@ If you plan to use this bash file, make sure to check all .txt files in all fold
 # How to use it
 
 1) Download this repository as a [zip file](https://github.com/msperlin/UBUNTU-Fresh-Install/archive/refs/heads/main.zip)
+
 2) Unpack the zip file and check all .txt files in all subfolders. Remove or add software/R packages as needed.
+
 3) Within a terminal, execute the main script:
 
 ```
-./UBUNTU_Install-Bash.sh
+./01-UBUNTU_Install-Software.sh
 ```
 
-4) type your sudo password and wait...
+Type your sudo password and wait..
+
+4) [optional] Install R packages:
+
+```
+./02-Install-R-Pkgs.sh
+```
 
 
 # Installed Software
@@ -38,8 +46,6 @@ This bash script includes the following software:
 ## Using snap
 
 - Microsoft code ([latest by snap](https://snapcraft.io/code))
-
-
 
 
 # Generating R package list
