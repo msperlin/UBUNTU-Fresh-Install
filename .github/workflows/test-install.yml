@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  Test-Install-Script:
+  Install-Script:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -25,9 +25,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: set permissions and execute script
+      - name: Install software
         run: | 
-          chmod +x UBUNTU_Install-Bash.sh
-          ./UBUNTU_Install-Bash.sh
+          ./01-UBUNTU_Install-Software.sh
+
+      - name: Install R packages
+        run: | 
+          ./02-Install-R-Pkgs.sh
 
       
