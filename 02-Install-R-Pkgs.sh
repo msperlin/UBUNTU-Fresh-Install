@@ -4,7 +4,10 @@
 
 echo "Installing R packages:"
 
-## make sure dir exists
+# 1) r script for single package and loop (no messages in output)
+# 2) 
+
+## run bash
 ./R-pkgs/S_Install-R-Pkgs.R
 
 echo ""

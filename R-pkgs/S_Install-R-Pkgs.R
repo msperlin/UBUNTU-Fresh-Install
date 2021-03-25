@@ -1,5 +1,8 @@
 #!/usr/bin/env Rscript
 
+args = commandArgs(trailingOnly=TRUE)
+my_pkg_to_install <- args[1]
+
 my_local_lib <- Sys.getenv('R_LIBS_USER')
 lib_install <- my_local_lib
 

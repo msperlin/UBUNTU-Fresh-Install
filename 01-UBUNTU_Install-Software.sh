@@ -32,8 +32,8 @@ echo " "
 echo "Installing by APT"
 for apt_software in $(cat apt-to-install/list_to_install.txt)
 do
-  echo "  - $apt_software"
-	sudo apt install "$apt_software" -y > /dev/null 2>&1
+  ./apt-to-install/install_by_apt.sh "$apt_software" 
+	#sudo apt install "$apt_software" -y > /dev/null 2>&1
 done
 
 
