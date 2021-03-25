@@ -40,10 +40,10 @@ done
 # install external software using bash (see folder bash-to-install/)
 echo " "
 echo "Installing by bash scripts"
-sudo ./bash-to-install/install_R.sh
-sudo ./bash-to-install/install_Rstudio.sh
+./bash-to-install/install_R.sh
+./bash-to-install/install_Rstudio.sh
 ./bash-to-install/configure_Rstudio.sh
-sudo ./bash-to-install/install_Google-Chrome.sh
+./bash-to-install/install_Google-Chrome.sh
 
 # Install all snaps
 echo " "
