@@ -8,7 +8,11 @@ echo "Installing R packages:"
 # 2) 
 
 ## run bash
-./R-pkgs/S_Install-R-Pkgs.R
+for R_pkg in $(cat R-pkgs/pkgs_to_install.txt)
+do
+	./R-pkgs/S_Install-R-Pkgs.R $R_pkg
+done
+
 
 echo ""
 echo "DONE! R packages installed"

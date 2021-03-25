@@ -48,17 +48,4 @@ check_installed <- function(pkg) {
     }
   }
 
-# get list of pkgs
-suppressWarnings({ 
-pkgs_to_install <- readLines('R-pkgs/pkgs_to_install.txt')
-})
-
-out <- lapply(pkgs_to_install, my_install_pkg)
-
-df <- do.call(rbind, out)
-
-message('\n\nThe following R package failed installation',
-        '\n\n',
-        paste0(df$pkg[df$status == 'failed'], collapse = '\n'))
-
-if (!any(df$status == 'failed')) message('No pkg failed..')
+my_install_pkg(my_pkg_to_install)
