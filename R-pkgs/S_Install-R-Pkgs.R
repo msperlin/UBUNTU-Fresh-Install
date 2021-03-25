@@ -1,8 +1,9 @@
 #!/usr/bin/env Rscript
 
-lib_install <- Sys.getenv('R_LIBS_USER')
+my_local_lib <- Sys.getenv('R_LIBS_USER')
+lib_install <- my_local_lib
 
-if (!dir.exists(lib_install)) dir.create(lib_install)
+if (!dir.exists(lib_install)) dir.create(lib_install, recursive = TRUE)
 
 my_install_pkg <- function(pkg) {
   
@@ -16,7 +17,8 @@ my_install_pkg <- function(pkg) {
   }
   
   try({
-  install.packages(pkg, quiet = TRUE)
+  install.packages(pkg, quiet = TRUE, 
+                   lib = my_local_lib)
   })
   
   # check if already installed
@@ -50,3 +52,10 @@ pkgs_to_install <- readLines('R-pkgs/pkgs_to_install.txt')
 
 out <- lapply(pkgs_to_install, my_install_pkg)
 
+df <- do.call(rbind, out)
+
+message('\n\nThe following R package failed installation',
+        '\n\n',
+        paste0(df$pkg[df$status == 'failed'], collapse = '\n'))
+
+if (!any(df$status == 'failed')) message('No pkg failed..')
