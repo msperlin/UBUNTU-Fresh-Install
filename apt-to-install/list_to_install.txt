@@ -17,3 +17,4 @@ default-jre
 libglpk-dev 
 obs-studio
 texstudio
+libmagick++-dev
