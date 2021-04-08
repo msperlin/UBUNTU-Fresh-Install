@@ -18,10 +18,16 @@ If you plan to use this bash file, make sure to check all .txt files in all fold
 
 Type your sudo password and wait..
 
+3) [optional] Install R  and RStudio
+
+```
+./02-Install-R-and-RStudio.sh
+```
+
 4) [optional] Install R packages:
 
 ```
-./02-Install-R-Pkgs.sh
+./03-Install-R-Pkgs.sh
 ```
 
 

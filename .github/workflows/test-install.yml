@@ -29,8 +29,12 @@ jobs:
         run: | 
           ./01-UBUNTU_Install-Software.sh
 
+      - name: Install R and rstudio
+        run: | 
+          ./02-Install-R-and-RStudio.sh
+
       - name: Install R packages
         run: | 
-          ./02-Install-R-Pkgs.sh
+          ./03-Install-R-Pkgs.sh
 
       
