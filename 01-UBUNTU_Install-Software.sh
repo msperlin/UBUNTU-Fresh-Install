@@ -1,5 +1,28 @@
 #!/usr/bin/env bash
 
+# Bash Script for installing work software in Linux Mint and Ubuntu
+
+## updating repos and upgrading
+sudo apt update 
+sudo apt upgrade -y
+sudo apt dist-upgrade -y
+
+# add all ppas (see file apt-to-install/ppa_to_add.txt)
+for ppa in $(cat apt-to-install/ppa_to_add.txt)
+do
+  sudo add-apt-repository "$ppa" -y
+done
+
+## updating repo again
+sudo apt update 
+sudo apt upgrade -y
+
+# install by apt
+for apt_software in $(cat apt-to-install/list_to_install.txt)
+do
+	./apt-to-install/install_by_apt.sh "$apt_software" -y
+done
+
 # install external software using bash (see folder bash-to-install/)
 echo " "
 echo "Installing by bash scripts"
