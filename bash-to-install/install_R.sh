@@ -2,30 +2,23 @@
 
 echo "  - Installing R"
 
-# new ver
+# new ver (2021-09-13) - 
+# https://cloud.r-project.org/bin/linux/ubuntu/#install-r
+## Hirsute Hippo (21.04, amd64 only)
+## Groovy Gorilla (20.10, amd64 only),
+## Focal Fossa (20.04; LTS and amd64 only),
+## Bionic Beaver (18.04; LTS), and
+## Xenial Xerus (16.04; LTS).
 
 # update indices
-sudo apt update -qq
+apt update -qq
 # install two helper packages we need
-sudo apt install --no-install-recommends software-properties-common dirmngr
-# import the signing key (by Michael Rutter) for these repo
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+apt install --no-install-recommends software-properties-common dirmngr
+# add the signing key (by Michael Rutter) for these repos
+# To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
+# Fingerprint: 298A3A825C0D65DFD57CBB651716619E084DAB9
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 # add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
-sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 
 sudo apt install --no-install-recommends r-base r-base-dev
-
-# old er
-#. /etc/os-release
-
-#MY_UBUNTU_VER="$UBUNTU_CODENAME"
-
-# maybe conditional on cran40? ..
-#DEB_R="deb https://cloud.r-project.org/bin/linux/ubuntu $MY_UBUNTU_VER-cran40/"
-
-# Install R and RStudio
-#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 > /dev/null 2>&1
-#sudo add-apt-repository "$DEB_R" > /dev/null 2>&1
-#sudo apt update > /dev/null 2>&1
-#sudo apt upgrade > /dev/null 2>&1
-#sudo apt-get install r-base r-base-dev -y > /dev/null 2>&1
