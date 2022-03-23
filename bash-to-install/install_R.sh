@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# defines codename for CRAN repo 
+# see: https://cloud.r-project.org/bin/linux/ubuntu/
+ubuntu_codename="focal"
+
 echo "  - Installing R"
 
 # new ver (2021-09-13) - 
@@ -19,6 +23,6 @@ apt install --no-install-recommends software-properties-common dirmngr
 # Fingerprint: 298A3A825C0D65DFD57CBB651716619E084DAB9
 wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 # add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
-add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $ubuntu_codename-cran40/"
 
 sudo apt install --no-install-recommends r-base r-base-dev
