@@ -17,16 +17,16 @@ done
 sudo apt update 
 sudo apt upgrade -y
 
+# install external software using bash (see folder bash-to-install/)
+echo " "
+echo "Installing by bash scripts"
+./bash-to-install/install_Google-Chrome.sh
+
 # install by apt
 for apt_software in $(cat apt-to-install/list_to_install.txt)
 do
 	./apt-to-install/install_by_apt.sh "$apt_software" -y
 done
-
-# install external software using bash (see folder bash-to-install/)
-echo " "
-echo "Installing by bash scripts"
-./bash-to-install/install_Google-Chrome.sh
 
 # Install all snaps
 echo " "

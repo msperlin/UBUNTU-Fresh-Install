@@ -27,4 +27,6 @@ wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sud
 # add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
 sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $ubuntu_codename-cran40/"
 
+sudo apt update
+
 sudo apt install --no-install-recommends r-base r-base-dev
