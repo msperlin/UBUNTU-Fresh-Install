@@ -19,3 +19,4 @@ obs-studio
 texstudio
 libmagick++-dev
 qpdf
+cmake
