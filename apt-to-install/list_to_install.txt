@@ -20,3 +20,5 @@ texstudio
 libmagick++-dev
 qpdf
 cmake
+make
+calibre
