@@ -18,7 +18,16 @@ jobs:
   # This workflow contains a single job called "build"
   Install-Script:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.config.os}}
+
+    name: Run on ${{matrix.config.os}}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: ubuntu-20.04}
+          - {os: ubuntu-22.04}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
