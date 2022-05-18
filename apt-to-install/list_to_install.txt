@@ -24,3 +24,5 @@ make
 calibre
 libzstd-dev
 python3-pip
+libharfbuzz-dev
+libfribidi-dev
