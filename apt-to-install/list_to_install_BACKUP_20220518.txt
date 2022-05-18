@@ -1,4 +1,9 @@
+libcurl4-openssl-dev 
 pandoc-* 
+libclang-dev 
+libxml2-dev 
+libv8-dev 
+libgit2-dev 
 virtualbox 
 libreoffice 
 ffmpeg 
@@ -7,8 +12,12 @@ git
 okular 
 hunspell-pt-br 
 htop
+default-jdk 
+default-jre 
+libglpk-dev 
 obs-studio
 texstudio
+libmagick++-dev
 qpdf
 cmake
 make

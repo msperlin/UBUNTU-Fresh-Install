@@ -2,7 +2,7 @@
 
 my_os <- 'ubuntu'
 os_release <- '20.04'
-pkgs <- readLines('pkgs_to_install.txt')
+pkgs <- readLines('./R-pkgs/pkgs_to_install.txt')
 
 commands <- remotes::system_requirements(
   os = my_os, 
@@ -10,10 +10,6 @@ commands <- remotes::system_requirements(
   package = pkgs
   )
 
-cli::cli_alert_success("got {length(commands)} commands! to run")
+cli::cli_alert_success("SUCCESS -- got {length(commands)} commands! to run")
 
 writeLines(commands, 'commands_to_run.txt')
-
-
-
-

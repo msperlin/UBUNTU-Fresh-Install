@@ -8,26 +8,19 @@ echo "Installing R packages:"
 # 2) 
 
 # install system requirements by package 
+
+# first run script to check sys dependencies
+bash ./R-pkgs/S_pkg-sysdep_to_bash.R 
+
 while read line; 
 do 
   echo $line
 	sudo $line
 done < R-pkgs/commands_to_run.txt
 
-# prompt=$(sudo -nv 2>&1)
-# if [ $? -eq 0 ]; then
-#   # exit code of sudo-command is 0
-#   echo "user is already sudo"
-#   sudo_pass=""
-# 
-# elif echo $prompt | grep -q '^sudo:'; then
-#   echo "Please type your password"
-#   read sudo_pass
-# else
-#   echo "no_sudo"
-# fi
+rm ./R_pkg/commands_to_run.txt
 
-## run bash
+# install individual packages
 for R_pkg in $(cat R-pkgs/pkgs_to_install.txt)
 do
 	./R-pkgs/S_Install-R-Pkgs.R $R_pkg 
