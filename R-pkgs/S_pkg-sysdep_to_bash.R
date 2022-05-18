@@ -12,6 +12,8 @@ commands <- remotes::system_requirements(
 
 cli::cli_alert_success("got {length(commands)} commands! to run")
 
+writeLines(commands, 'commands_to_run.txt')
+
 
 
 

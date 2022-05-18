@@ -2,7 +2,6 @@
 
 args = commandArgs(trailingOnly=TRUE)
 my_pkg_to_install <- args[1]
-sudo_pass <- args[2]
 
 #check if remotes is installed
 
@@ -11,7 +10,7 @@ lib_install <- my_local_lib
 
 if (!dir.exists(lib_install)) dir.create(lib_install, recursive = TRUE)
 
-my_install_pkg <- function(pkg, sudo_pass) {
+my_install_pkg <- function(pkg) {
   
   # check if already installed
   message(paste0('\t', pkg), appendLF = FALSE)
@@ -22,24 +21,24 @@ my_install_pkg <- function(pkg, sudo_pass) {
                                 status='already installed')))
   }
 
-  cli::cli_alert("Checking system deps")
+  #cli::cli_alert("Checking system deps")
 
-  # system dependencies
-  deps <- remotes::system_requirements(
-    os = "ubuntu",
-    os_release = "20.04",
-    package = pkg )
-
-  if (length(deps) == 0) {
-    cli::cli_alert_success("\tfound no sys deps")
-  } else {
-    cli::cli_alert_success("\tfound {length(deps)} sys deps to install")
-  }
-
-  for (i_com in deps) {
-    cli::cli_alert_info("Running {i_com}")
-    system(paste0("sudo -kS ", i_com), input = sudo_pass)
-  }
+  # # system dependencies
+  # deps <- remotes::system_requirements(
+  #   os = "ubuntu",
+  #   os_release = "20.04",
+  #   package = pkg )
+  # 
+  # if (length(deps) == 0) {
+  #   cli::cli_alert_success("\tfound no sys deps")
+  # } else {
+  #   cli::cli_alert_success("\tfound {length(deps)} sys deps to install")
+  # }
+  # 
+  # for (i_com in deps) {
+  #   cli::cli_alert_info("Running {i_com}")
+  #   system(paste0("sudo -kS ", i_com), input = sudo_pass)
+  # }
   
   try({
   install.packages(pkg, quiet = TRUE, 
@@ -70,4 +69,4 @@ check_installed <- function(pkg) {
 if (!check_installed("remotes")) install.packages("remotes")
 if (!check_installed("cli")) install.packages("cli")
 
-my_install_pkg(my_pkg_to_install, sudo_pass)
+my_install_pkg(my_pkg_to_install)
