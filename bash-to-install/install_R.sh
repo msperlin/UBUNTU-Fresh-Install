@@ -3,7 +3,7 @@
 # defines ubuntu codename for CRAN repo 
 # see: https://cloud.r-project.org/bin/linux/ubuntu/
 # see: https://www.linuxmint.com/download_all.php
-ubuntu_codename="focal" # or jammy for ubuntu 22.04
+ubuntu_codename="jammy" # or jammy for ubuntu 22.04
 
 echo "  - Installing R"
 
