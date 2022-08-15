@@ -65,3 +65,5 @@ BETS
 broom
 DistributionUtils
 ggforce
+covr
+devtools
