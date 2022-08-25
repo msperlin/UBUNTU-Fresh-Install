@@ -67,3 +67,7 @@ DistributionUtils
 ggforce
 covr
 devtools
+spelling
+rhub
+languageserver
+blogdown
