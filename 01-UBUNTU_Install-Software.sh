@@ -46,7 +46,7 @@ echo " "
 echo "Installing by flatpak"
 
 ## textudio
-flatpak install flathub org.texstudio.TeXstudio
+flatpak install flathub org.texstudio.TeXstudio -y
 
 ## Make sure to update and clean
 echo " "
