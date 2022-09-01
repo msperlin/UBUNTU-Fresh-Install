@@ -7,16 +7,6 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt dist-upgrade -y
 
-# add all ppas (see file apt-to-install/ppa_to_add.txt)
-for ppa in $(cat apt-to-install/ppa_to_add.txt)
-do
-  sudo add-apt-repository "$ppa" -y
-done
-
-## updating repo again
-sudo apt update 
-sudo apt upgrade -y
-
 # install external software using bash (see folder bash-to-install/)
 echo " "
 echo "Installing by bash scripts"
@@ -50,6 +40,13 @@ do
   echo "    - $snap_software"
 	sudo snap install "$snap_software" --classic > /dev/null 2>&1
 done
+
+# Install flatpaks
+echo " "
+echo "Installing by flatpak"
+
+## textudio
+flatpak install flathub org.texstudio.TeXstudio
 
 ## Make sure to update and clean
 echo " "

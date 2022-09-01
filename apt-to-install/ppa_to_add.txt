@@ -1,2 +1,0 @@
-ppa:sunderme/texstudio
-ppa:obsproject/obs-studio

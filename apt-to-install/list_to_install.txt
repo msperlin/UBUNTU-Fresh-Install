@@ -7,8 +7,6 @@ git
 okular 
 hunspell-pt-br 
 htop
-obs-studio
-texstudio
 qpdf
 cmake
 make
