@@ -4,9 +4,10 @@ echo "  - Installing RStudio"
 
 # set tempfile for dl url
 my_temp=$(mktemp /tmp/XXXXXX.txt)
+ubuntu_distro="jammy"
 
 ## Find rstudio latest ver download
-wget -qO- https://rstudio.com/products/rstudio/download/ | grep -Eoi '<a [^>]+>' |  grep -Eo 'href="[^\"]+"' |  grep -Eo '(http|https)://download1.rstudio.org/desktop/bionic/amd64/rstudio-[^/"]+-amd64.deb' >| $my_temp
+wget -qO- https://rstudio.com/products/rstudio/download/ | grep -Eoi '<a [^>]+>' |  grep -Eo 'href="[^\"]+"' |  grep -Eo '(http|https)://download1.rstudio.org/desktop/$ubuntu_distro/amd64/rstudio-[^/"]+-amd64.deb' >| $my_temp
 
 URL_RSTUDIO=$(head -n 1 $my_temp)
 
