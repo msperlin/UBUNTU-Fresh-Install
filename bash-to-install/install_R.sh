@@ -3,7 +3,8 @@
 # defines ubuntu codename for CRAN repo 
 # see: https://cloud.r-project.org/bin/linux/ubuntu/
 # see: https://www.linuxmint.com/download_all.php
-ubuntu_codename="jammy" # or jammy for ubuntu 22.04
+
+this_codename=$1
 
 echo "  - Installing R"
 
@@ -26,7 +27,7 @@ sudo apt install --no-install-recommends software-properties-common dirmngr
 wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 
 # add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
-sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $ubuntu_codename-cran40/"
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $this_codename-cran40/"
 
 sudo apt update
 
