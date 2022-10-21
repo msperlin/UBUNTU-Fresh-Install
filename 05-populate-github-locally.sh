@@ -4,7 +4,7 @@
 # make sure you have ssh registered at github
 
 USERNAME="msperlin"
-name_main_dir="GitRepo2"
+name_main_dir="GitRepo"
 echo "Populating gitrepo folder"
 
 
