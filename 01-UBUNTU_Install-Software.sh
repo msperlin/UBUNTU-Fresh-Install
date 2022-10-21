@@ -41,13 +41,6 @@ do
 	sudo snap install "$snap_software" --classic > /dev/null 2>&1
 done
 
-# Install flatpaks
-echo " "
-echo "Installing by flatpak"
-
-## textudio
-flatpak install flathub org.texstudio.TeXstudio -y
-
 ## Make sure to update and clean
 echo " "
 echo "-> Updating, upgrading and cleaning <-"
