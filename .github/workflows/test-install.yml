@@ -26,7 +26,6 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: ubuntu-20.04}
           - {os: ubuntu-22.04}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -42,8 +41,13 @@ jobs:
         run: | 
           ./02-Install-R-and-RStudio.sh
 
-      - name: Install R packages
+      - name: Install latex
         run: | 
-          ./03-Install-R-Pkgs.sh
+          ./03-Install-latex.sh
+
+# dont install R package (takes too long)
+#      - name: Install R packages
+#        run: | 
+#          ./03-Install-R-Pkgs.sh
 
       
