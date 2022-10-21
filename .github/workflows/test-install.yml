@@ -41,13 +41,15 @@ jobs:
         run: | 
           ./02-Install-R-and-RStudio.sh
 
-      - name: Install latex
-        run: | 
-          ./04-Install-latex.sh
+# dont test latex install (takes too long...)
+#      - name: Install latex
+#        run: | 
+#          ./04-Install-latex.sh
 
       - name: Populate gitrepo locally
         run: | 
           ./05-populate-github-locally.sh
+
 # dont install R package (takes too long)
 #      - name: Install R packages
 #        run: | 
