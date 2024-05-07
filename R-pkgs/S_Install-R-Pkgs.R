@@ -41,8 +41,12 @@ my_install_pkg <- function(pkg) {
   # }
   
   try({
-  install.packages(pkg, quiet = TRUE, 
-                   lib = my_local_lib)
+
+    n_cpus <- parallel::detectCores() - 1
+
+    install.packages(pkg, quiet = TRUE, 
+                   lib = my_local_lib,
+                   Ncpus = n_cpus5)
   })
   
   # check if already installed
