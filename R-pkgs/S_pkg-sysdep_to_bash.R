@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
 my_os <- 'ubuntu'
-os_release <- '20.04'
+os_release <- '24.04'
 pkgs <- readLines('./R-pkgs/pkgs_to_install.txt')
 
 commands <- remotes::system_requirements(

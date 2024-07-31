@@ -46,7 +46,7 @@ my_install_pkg <- function(pkg) {
 
     install.packages(pkg, quiet = TRUE, 
                    lib = my_local_lib,
-                   Ncpus = n_cpus5)
+                   Ncpus = n_cpus)
   })
   
   # check if already installed
